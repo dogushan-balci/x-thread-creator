@@ -1,0 +1,315 @@
+:root {
+    --primary-color: #1DA1F2;
+    --secondary-color: #657786;
+    --background-color: #15202B;
+    --card-background: #192734;
+    --text-color: #FFFFFF;
+    --border-color: #38444D;
+    --hover-color: #1A91DA;
+    --success-color: #17BF63;
+    --error-color: #E0245E;
+    --gradient-start: #1DA1F2;
+    --gradient-end: #0D8ECF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    flex: 1;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+}
+
+.editor-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    background-color: var(--card-background);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-group {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    width: 100%;
+    min-height: 200px;
+    max-height: 500px;
+    padding: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 0.5rem;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-size: 1rem;
+    resize: vertical;
+    transition: all 0.3s ease;
+    overflow-y: auto;
+    overflow-x: hidden;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(29, 161, 242, 0.1);
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+
+.btn {
+    flex: 1;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn i {
+    font-size: 1.1rem;
+}
+
+.btn.primary {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: white;
+}
+
+.btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(29, 161, 242, 0.2);
+}
+
+.btn.secondary {
+    background-color: var(--card-background);
+    color: var(--text-color);
+    border: 2px solid var(--border-color);
+}
+
+.btn.secondary:hover {
+    background-color: var(--border-color);
+    transform: translateY(-2px);
+}
+
+.preferences {
+    background-color: var(--background-color);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.preference-group {
+    margin-bottom: 1.5rem;
+}
+
+.preference-group:last-child {
+    margin-bottom: 0;
+}
+
+.preference-group h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.radio-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.radio-group label {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem;
+    background-color: var(--card-background);
+    border: 2px solid var(--border-color);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.radio-group label:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.radio-group input[type="radio"] {
+    display: none;
+}
+
+.radio-group input[type="radio"]:checked + span {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.radio-group input[type="radio"]:checked + label {
+    border-color: var(--primary-color);
+    background-color: rgba(29, 161, 242, 0.1);
+}
+
+.preview-section {
+    background-color: var(--background-color);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+}
+
+.preview-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.thread-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tweet {
+    background-color: var(--card-background);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    transition: all 0.3s ease;
+}
+
+.tweet:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tweet-number {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    min-width: 3rem;
+}
+
+.tweet-content {
+    flex: 1;
+    word-break: break-word;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    color: var(--secondary-color);
+    border-top: 1px solid var(--border-color);
+    margin-top: 3rem;
+}
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--hover-color);
+}
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .editor-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .controls {
+        flex-direction: column;
+    }
+    
+    .radio-group {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0.5rem;
+    }
+    
+    .editor-container {
+        padding: 1rem;
+    }
+    
+    .preferences {
+        padding: 1rem;
+    }
+}
